@@ -1,0 +1,13 @@
+#Sarah Martin C00257967
+#Makefile for mutualEx.cpp and semaphore.cpp 
+
+
+CC=g++
+CFLAGS= -std=c++11 -pthread
+
+MUTUAL: mutualEx.cpp
+	g++ -std=c++11 -pthread mutualEx.cpp Semaphore.cpp -o mutual 
+
+
+CLEAN:
+	rm *.o

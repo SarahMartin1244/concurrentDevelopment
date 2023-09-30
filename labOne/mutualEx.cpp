@@ -2,10 +2,14 @@
 #include <iostream>
 #include <thread>
 #include <vector>
+#include <mutex>
 
+/*! Student Name: Sarah Martin */
+/*! Student ID: C00257967 */
 
 static const int num_threads = 100;
 int sharedVariable=0;
+std::mutex mutexLock; // add a mutex lock 
 
 
 /*! \fn updateTask
@@ -20,7 +24,9 @@ void updateTask(std::shared_ptr<Semaphore> firstSem, int numUpdates){
  
   for(int i=0;i<numUpdates;i++){
     //UPDATE SHARED VARIABLE HERE!
+    mutexLock.lock();
     sharedVariable++;
+    mutexLock.unlock();
   }
 
 }
