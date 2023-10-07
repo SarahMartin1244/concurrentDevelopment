@@ -3,8 +3,15 @@
 #include <vector>
 #include <iostream>
 
-/*! Student Name: Sarah Martin */
-/*! Student Number: C00257967 */
+/**
+ * @file rendezvous.cpp
+ * @brief This program demonstrates a barrier synchronization mechanism implemented using threads and semaphores
+ *
+ * 
+ * @StudentName: Sarah Martin
+ * @studentID: C00257967
+ * @date October 7, 2023
+ */
 
 /*! displays the first function in the barrier being executed */
 void task(std::shared_ptr<int> arrivedTasks, std::shared_ptr<Semaphore> mutexSem, std::shared_ptr<Semaphore> barrierSem, int threadCount){
