@@ -4,8 +4,11 @@
 #include <vector>
 #include <mutex>
 
-/*! Student Name: Sarah Martin */
-/*! Student ID: C00257967 */
+/**
+ * @StudentName: Sarah Martin
+ * @studentID C00257967
+ * @date October 7, 2023
+ */
 
 static const int num_threads = 100;
 int sharedVariable=0;

@@ -2,9 +2,12 @@
 #include <iostream>
 #include <thread>
 #include <unistd.h>
+/**
+ * @StudentName: Sarah Martin
+ * @studentID C00257967
+ * @date October 7, 2023
+ */
 
-/*! Student Name: Sarah Martin */
-/*! Student ID: C00257967 */
 
 /*! displays a message first*/
 void taskOne(std::shared_ptr<Semaphore> theSemaphore, int delay){
