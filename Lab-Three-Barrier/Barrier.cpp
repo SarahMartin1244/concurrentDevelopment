@@ -1,61 +1,88 @@
 #include "Barrier.h"
+#include <iostream>
 
-/*! \class Barrier
-    \brief An Implementation of a barrier Using Semaphores 
-
-   Uses C++11 features such as mutex and condition variables to implement a barrier using Semaphores with N number threads
+/*! Student Name: Sarah Martin 
+    Description: This program demonstrates the use of a Barrier using Semaphores
+    Date: 10/10/2023
 
 */
+
+/*! \class Barrier
+    \brief A Barrier Implementation
+
+   Uses C++11 features such as mutex and condition variables to implement a Barrier class using Semaphores
+
+*/
+
 /*! Barrier constructor*/
-Barrier::Barrier(){
-
-  this->count = 0;
+Barrier::Barrier()
+{
+  count = 0;
   threadNum = 0;
   condition = false;
-  mutex=std::make_shared<Semaphore>(1);
-  //std::shared_ptr<Semaphore> mutex(new Semaphore(1));
-  barrier1=std::make_shared<Semaphore>(0);
-  //std::shared_ptr<Semaphore> barrier1(new Semaphore(0));
-  // std::shared_ptr<Semaphore> barrier2(new Semaphore(1));
-
+  theMutex = std::make_shared<Semaphore>(1);
+  innerLock = std::make_shared<Semaphore>(0);
+  outerLock = std::make_shared<Semaphore>(1);
 }
+
 /*! Barrier with parameter constructor*/
-Barrier::Barrier(int count){
-
-  this->count = count;
+Barrier::Barrier(int countOfThreads)
+{
+  count = countOfThreads;
   threadNum = 0;
   condition = false;
-  std::shared_ptr<Semaphore> mutex(new Semaphore(1));
-  std::shared_ptr<Semaphore> barrier1(new Semaphore(0));
-  // std::shared_ptr<Semaphore> barrier2(new Semaphore(1));
+  theMutex = std::make_shared<Semaphore>(1);  /**< mutex to protect threadNum */
+  innerLock = std::make_shared<Semaphore>(0); /**< inner lock to block threads until all threads arrive */
+  outerLock = std::make_shared<Semaphore>(1); /**< outer lock to block threads until all threads finish */
 }
-/*! Barrier deconstructor*/
-Barrier::~Barrier(){
 
+/*! Barrier deconstructor*/
+Barrier::~Barrier()
+{
 }
 
 /*! sets count value*/
-void Barrier::setCount(int x){
-
+void Barrier::setCount(int x)
+{
   this->count = x;
 }
-/*! returns count value*/
-int Barrier::getCount(){
 
+/*! returns count value*/
+int Barrier::getCount()
+{
   return this->count;
 }
 
-/*! waits for all the threads before starting second half of code*/ 
-void Barrier::waitForAll(){
-
-  mutex->Wait();
+/*! waits for all the threads before starting the second half of code*/
+void Barrier::waitForAll()
+{
+  theMutex->Wait();
   threadNum++;
 
-  if(threadNum == count){
-    barrier1->Signal();
-    threadNum = 0;
+
+
+
+  
+  if (threadNum == count)  /**< if the last thread to arrive, release the outer lock */
+  {
+    outerLock->Wait(); /**< access the outer lock (blocks other threads) */
+    innerLock->Signal();  /**< release the inner lock (allows other threads to access) */
   }
-  mutex->Signal();
-  barrier1->Wait();
-  barrier1->Signal();
+  theMutex->Signal(); /**< release the mutex (allows other threads to access threadNum) */
+
+  innerLock->Wait();
+  innerLock->Signal();
+
+  theMutex->Wait();
+  threadNum--;
+
+  if (threadNum == 0)  /**< if the last thread to finish, release the outer lock */
+  {
+    innerLock->Wait();
+    outerLock->Signal();
+  }
+  theMutex->Signal(); 
+
+  outerLock->Wait(); /**< access the outer lock (blocks other threads) */
+  outerLock->Signal(); /**< release the outer lock */
 }
