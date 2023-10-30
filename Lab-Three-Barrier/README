@@ -1,0 +1,10 @@
+## student Name: Sarah Martin
+## student ID: C00257967
+## 30/10/2023
+##This project is licensed under the [GNU General Public License, Version 3](https://www.gnu.org/licenses/gpl-3.0)
+
+# Lab Three: multi-threaded barrier synchronization mechanism using semaphores
+
+## Project Description 
+Demonstrates the use of a multi-threaded barrier synchronization mechanism using semaphores. This code allows multiple threads to synchronize and pause their execution until all threads have reached a  'barrier'.  
+

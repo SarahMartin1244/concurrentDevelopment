@@ -1,0 +1,127 @@
+\hypertarget{class_barrier}{}\doxysection{Barrier Class Reference}
+\label{class_barrier}\index{Barrier@{Barrier}}
+
+
+A \mbox{\hyperlink{class_barrier}{Barrier}} Implementation.  
+
+
+
+
+{\ttfamily \#include $<$Barrier.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_barrier_a462a2435e07b6fabc0265011f03310ee}{Barrier}} ()
+\item 
+\mbox{\hyperlink{class_barrier_a401f40e73302009b305904ffc7825304}{$\sim$\+Barrier}} ()
+\item 
+\mbox{\hyperlink{class_barrier_abf49ba53af7acbddd6d15474f7fcef1d}{Barrier}} (int count\+Of\+Threads)
+\item 
+void \mbox{\hyperlink{class_barrier_ab999e172844330d8b9a1c13f3766959d}{set\+Count}} (int count)
+\item 
+int \mbox{\hyperlink{class_barrier_a471bfe5ce54384baa7dbd195ae3a7b30}{get\+Count}} ()
+\item 
+void \mbox{\hyperlink{class_barrier_a59b259f25f6acdc5f943398035d2d87a}{wait\+For\+All}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A \mbox{\hyperlink{class_barrier}{Barrier}} Implementation. 
+
+Student Name\+: Sarah Martin Description\+: This program demonstrates the use of a \mbox{\hyperlink{class_barrier}{Barrier}} using Semaphores Date\+: 10/10/2023
+
+Uses C++11 features such as mutex and condition variables to implement a \mbox{\hyperlink{class_barrier}{Barrier}} class using Semaphores
+
+Uses C++11 features such as mutex and condition variables to implement a \mbox{\hyperlink{class_barrier}{Barrier}} class using Semaphores 
+
+Definition at line 11 of file Barrier.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_barrier_a462a2435e07b6fabc0265011f03310ee}\label{class_barrier_a462a2435e07b6fabc0265011f03310ee}} 
+\index{Barrier@{Barrier}!Barrier@{Barrier}}
+\index{Barrier@{Barrier}!Barrier@{Barrier}}
+\doxysubsubsection{\texorpdfstring{Barrier()}{Barrier()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Barrier\+::\+Barrier (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\hyperlink{class_barrier}{Barrier}} constructor 
+
+Definition at line 18 of file Barrier.\+cpp.
+
+\mbox{\Hypertarget{class_barrier_a401f40e73302009b305904ffc7825304}\label{class_barrier_a401f40e73302009b305904ffc7825304}} 
+\index{Barrier@{Barrier}!````~Barrier@{$\sim$Barrier}}
+\index{````~Barrier@{$\sim$Barrier}!Barrier@{Barrier}}
+\doxysubsubsection{\texorpdfstring{$\sim$Barrier()}{~Barrier()}}
+{\footnotesize\ttfamily Barrier\+::$\sim$\+Barrier (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\hyperlink{class_barrier}{Barrier}} deconstructor 
+
+Definition at line 40 of file Barrier.\+cpp.
+
+\mbox{\Hypertarget{class_barrier_abf49ba53af7acbddd6d15474f7fcef1d}\label{class_barrier_abf49ba53af7acbddd6d15474f7fcef1d}} 
+\index{Barrier@{Barrier}!Barrier@{Barrier}}
+\index{Barrier@{Barrier}!Barrier@{Barrier}}
+\doxysubsubsection{\texorpdfstring{Barrier()}{Barrier()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Barrier\+::\+Barrier (\begin{DoxyParamCaption}\item[{int}]{count\+Of\+Threads }\end{DoxyParamCaption})}
+
+\mbox{\hyperlink{class_barrier}{Barrier}} with parameter constructor $<$ mutex to protect thread\+Num
+
+$<$ inner lock to block threads until all threads arrive
+
+$<$ outer lock to block threads until all threads finish
+
+Definition at line 29 of file Barrier.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_barrier_a471bfe5ce54384baa7dbd195ae3a7b30}\label{class_barrier_a471bfe5ce54384baa7dbd195ae3a7b30}} 
+\index{Barrier@{Barrier}!getCount@{getCount}}
+\index{getCount@{getCount}!Barrier@{Barrier}}
+\doxysubsubsection{\texorpdfstring{getCount()}{getCount()}}
+{\footnotesize\ttfamily int Barrier\+::get\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+returns count value 
+
+Definition at line 51 of file Barrier.\+cpp.
+
+\mbox{\Hypertarget{class_barrier_ab999e172844330d8b9a1c13f3766959d}\label{class_barrier_ab999e172844330d8b9a1c13f3766959d}} 
+\index{Barrier@{Barrier}!setCount@{setCount}}
+\index{setCount@{setCount}!Barrier@{Barrier}}
+\doxysubsubsection{\texorpdfstring{setCount()}{setCount()}}
+{\footnotesize\ttfamily void Barrier\+::set\+Count (\begin{DoxyParamCaption}\item[{int}]{x }\end{DoxyParamCaption})}
+
+sets count value 
+
+Definition at line 45 of file Barrier.\+cpp.
+
+\mbox{\Hypertarget{class_barrier_a59b259f25f6acdc5f943398035d2d87a}\label{class_barrier_a59b259f25f6acdc5f943398035d2d87a}} 
+\index{Barrier@{Barrier}!waitForAll@{waitForAll}}
+\index{waitForAll@{waitForAll}!Barrier@{Barrier}}
+\doxysubsubsection{\texorpdfstring{waitForAll()}{waitForAll()}}
+{\footnotesize\ttfamily void Barrier\+::wait\+For\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+waits for all the threads before starting the second half of code $<$ if the last thread to arrive, release the outer lock
+
+$<$ access the outer lock (blocks other threads)
+
+$<$ release the inner lock (allows other threads to access)
+
+$<$ release the mutex (allows other threads to access thread\+Num)
+
+$<$ if the last thread to finish, release the outer lock
+
+$<$ access the outer lock (blocks other threads)
+
+$<$ release the outer lock
+
+Definition at line 57 of file Barrier.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_barrier_8h}{Barrier.\+h}}\item 
+\mbox{\hyperlink{_barrier_8cpp}{Barrier.\+cpp}}\end{DoxyCompactItemize}

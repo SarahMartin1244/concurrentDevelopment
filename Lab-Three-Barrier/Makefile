@@ -1,3 +1,5 @@
+#Sarah Martin C00257967
+# Makefile for Barrier.cpp and Semaphore.cpp
 CC=g++
 CFLAGS= -std=c++11 -pthread -I.
 
