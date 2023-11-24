@@ -1,10 +1,30 @@
-## student Name: Sarah Martin
-## student ID: C00257967
-## 30/10/2023
-##This project is licensed under the [GNU General Public License, Version 3](https://www.gnu.org/licenses/gpl-3.0)
+# Project Lab Three Barrier  
 
-# Lab Three: multi-threaded barrier synchronization mechanism using semaphores
+## Student Information
+- **Student Name:** Sarah Martin
+- **Student ID:** C00257967
+- **Date:** 30/10/2023
 
-## Project Description 
-Demonstrates the use of a multi-threaded barrier synchronization mechanism using semaphores. This code allows multiple threads to synchronize and pause their execution until all threads have reached a  'barrier'.  
+## Project Overview
+Demonstrates the use of a multi-threaded barrier synchronization mechanism using semaphores. This code allows multiple threads to synchronize and pause their execution until all threads have reached a  'barrier'. 
+
+## License
+This project is licensed under the [GNU General Public License, Version 3](https://www.gnu.org/licenses/gpl-3.0).
+
+## GIT URL
+https://github.com/SarahMartin1244/concurrentDevelopment/tree/main/Lab-Three-Barrier
+
+### Project Details
+The `Barrier` class provides an implementation of a barrier synchronization mechanism using mutex and condition variables.
+
+#### `Semaphore.cpp`
+The `Semaphore` class provides a basic implementation of a semaphore using mutex and condition variables.
+
+
+
+
+
+
+
+
 

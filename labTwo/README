@@ -1,10 +1,31 @@
-## student Name: Sarah Martin
-## student ID: C00257967
-## 7/10/2023
-##This project is licensed under the [GNU General Public License, Version 3](https://www.gnu.org/licenses/gpl-3.0)
+# Project Lab Two: multi-threaded barrier synchronization mechanism using semaphores
 
-# Lab Two: multi-threaded barrier synchronization mechanism using semaphores
+## Student Information
+- **Student Name:** Sarah Martin
+- **Student ID:** C00257967
+- **Date:** 7/10/2023
 
-## Project Description 
-Demonstrates the use of a multi-threaded barrier synchronization mechanism using semaphores. This code allows multiple threads to synchronize and pause their execution until all threads have reached a  'barrier'. 
+## Project Overview
+This project demonstrates the use of a multi-threaded barrier synchronization mechanism using semaphores. This code allows multiple threads to synchronize and pause their execution until all threads have reached a  'barrier'.
+
+## License
+This project is licensed under the [GNU General Public License, Version 3](https://www.gnu.org/licenses/gpl-3.0).
+
+## GIT URL
+https://github.com/SarahMartin1244/concurrentDevelopment/tree/main/labTwo
+
+### Project Details
+#### Semaphore.h and Semaphore.cpp
+The `Semaphore` class provides a basic implementation of a semaphore. It includes methods for waiting and signaling, ensuring synchronized access to shared resources.
+
+#### rendezvous.cpp
+The rendezvous.cpp program demonstrates a barrier synchronization mechanism implemented using threads and semaphores
+
+
+
+
+
+
+
+
 

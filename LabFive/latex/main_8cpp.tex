@@ -1,0 +1,155 @@
+\hypertarget{main_8cpp}{}\doxysection{main.\+cpp File Reference}
+\label{main_8cpp}\index{main.cpp@{main.cpp}}
+
+
+This program demonstrates the dining philosophers problem using semaphores. It simulates multiple philosophers thinking, acquiring forks, eating, and releasing forks concurrently.  
+
+
+{\ttfamily \#include \char`\"{}Semaphore.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$ctime$>$}\newline
+Include dependency graph for main.\+cpp\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_semaphore}{Semaphore}} $>$ \mbox{\hyperlink{main_8cpp_a1203c5e7c4716e863dc085f2ea69815e}{forks}} (\mbox{\hyperlink{main_8cpp_a308572e3937ef7742e8cc93025faf712}{COUNT}})
+\item 
+void \mbox{\hyperlink{main_8cpp_a995feefa383b82265e681a3fe8c012c2}{think}} (int my\+ID)
+\item 
+void \mbox{\hyperlink{main_8cpp_a21a9defcc14025ebcaa9484d47622b9d}{get\+\_\+forks}} (int phil\+ID)
+\item 
+void \mbox{\hyperlink{main_8cpp_a4cec90aab433a1e4df09b9b6662d5c3e}{put\+\_\+forks}} (int phil\+ID)
+\item 
+void \mbox{\hyperlink{main_8cpp_a228fa031b8deb86a9df2eea2892c3241}{eat}} (int my\+ID)
+\item 
+void \mbox{\hyperlink{main_8cpp_a61d704a6f65c3d915b82ea8a844cc527}{philosopher}} (int id)
+\item 
+int \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{main_8cpp_a308572e3937ef7742e8cc93025faf712}{COUNT}} = 5
+\item 
+const int \mbox{\hyperlink{main_8cpp_a5a1bc6e8c62cf965547cd9bba4da2448}{THINKTIME}} = 3
+\item 
+const int \mbox{\hyperlink{main_8cpp_a92e894dc749f0caa8232e432965090af}{EATTIME}} = 5
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This program demonstrates the dining philosophers problem using semaphores. It simulates multiple philosophers thinking, acquiring forks, eating, and releasing forks concurrently. 
+
+@\+Student\+Name\+: Sarah Martin @student\+ID\+: C00257967 \begin{DoxyDate}{Date}
+5/11/2023 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8cpp_a228fa031b8deb86a9df2eea2892c3241}\label{main_8cpp_a228fa031b8deb86a9df2eea2892c3241}} 
+\index{main.cpp@{main.cpp}!eat@{eat}}
+\index{eat@{eat}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{eat()}{eat()}}
+{\footnotesize\ttfamily void eat (\begin{DoxyParamCaption}\item[{int}]{my\+ID }\end{DoxyParamCaption})}
+
+Function to simulate a philosopher eating 
+
+Definition at line 65 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_a1203c5e7c4716e863dc085f2ea69815e}\label{main_8cpp_a1203c5e7c4716e863dc085f2ea69815e}} 
+\index{main.cpp@{main.cpp}!forks@{forks}}
+\index{forks@{forks}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{forks()}{forks()}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_semaphore}{Semaphore}}$>$ forks (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{main_8cpp_a308572e3937ef7742e8cc93025faf712}{COUNT}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8cpp_a21a9defcc14025ebcaa9484d47622b9d}\label{main_8cpp_a21a9defcc14025ebcaa9484d47622b9d}} 
+\index{main.cpp@{main.cpp}!get\_forks@{get\_forks}}
+\index{get\_forks@{get\_forks}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{get\_forks()}{get\_forks()}}
+{\footnotesize\ttfamily void get\+\_\+forks (\begin{DoxyParamCaption}\item[{int}]{phil\+ID }\end{DoxyParamCaption})}
+
+Function for a philosopher to acquire both forks 
+
+Definition at line 53 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Initialize all forks to 1 (unlocked)
+
+Create and start philosopher threads
+
+Create and start philosopher threads
+
+Definition at line 81 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_a61d704a6f65c3d915b82ea8a844cc527}\label{main_8cpp_a61d704a6f65c3d915b82ea8a844cc527}} 
+\index{main.cpp@{main.cpp}!philosopher@{philosopher}}
+\index{philosopher@{philosopher}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{philosopher()}{philosopher()}}
+{\footnotesize\ttfamily void philosopher (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+Function representing the behavior of a philosopher 
+
+Definition at line 72 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_a4cec90aab433a1e4df09b9b6662d5c3e}\label{main_8cpp_a4cec90aab433a1e4df09b9b6662d5c3e}} 
+\index{main.cpp@{main.cpp}!put\_forks@{put\_forks}}
+\index{put\_forks@{put\_forks}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{put\_forks()}{put\_forks()}}
+{\footnotesize\ttfamily void put\+\_\+forks (\begin{DoxyParamCaption}\item[{int}]{phil\+ID }\end{DoxyParamCaption})}
+
+Function for a philosopher to release both forks 
+
+Definition at line 59 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_a995feefa383b82265e681a3fe8c012c2}\label{main_8cpp_a995feefa383b82265e681a3fe8c012c2}} 
+\index{main.cpp@{main.cpp}!think@{think}}
+\index{think@{think}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{think()}{think()}}
+{\footnotesize\ttfamily void think (\begin{DoxyParamCaption}\item[{int}]{my\+ID }\end{DoxyParamCaption})}
+
+Function to simulate a philosopher thinking 
+
+Definition at line 46 of file main.\+cpp.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{main_8cpp_a308572e3937ef7742e8cc93025faf712}\label{main_8cpp_a308572e3937ef7742e8cc93025faf712}} 
+\index{main.cpp@{main.cpp}!COUNT@{COUNT}}
+\index{COUNT@{COUNT}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{COUNT}{COUNT}}
+{\footnotesize\ttfamily const int COUNT = 5}
+
+
+
+Definition at line 40 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_a92e894dc749f0caa8232e432965090af}\label{main_8cpp_a92e894dc749f0caa8232e432965090af}} 
+\index{main.cpp@{main.cpp}!EATTIME@{EATTIME}}
+\index{EATTIME@{EATTIME}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{EATTIME}{EATTIME}}
+{\footnotesize\ttfamily const int EATTIME = 5}
+
+
+
+Definition at line 42 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_a5a1bc6e8c62cf965547cd9bba4da2448}\label{main_8cpp_a5a1bc6e8c62cf965547cd9bba4da2448}} 
+\index{main.cpp@{main.cpp}!THINKTIME@{THINKTIME}}
+\index{THINKTIME@{THINKTIME}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{THINKTIME}{THINKTIME}}
+{\footnotesize\ttfamily const int THINKTIME = 3}
+
+
+
+Definition at line 41 of file main.\+cpp.
+

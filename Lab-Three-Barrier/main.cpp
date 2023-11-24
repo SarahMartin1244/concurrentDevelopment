@@ -2,11 +2,16 @@
 #include <thread>
 #include <vector>
 
-/*! Student Name: Sarah Martin 
-    Description: This program demonstrates the use of a Barrier using Semaphores
-    Date: 10/10/2023
+/**
+ * @file Barrer.cpp
+ * @brief This program demonstrates the use of a Barrier using Semaphores
+ *
+ * 
+ * @StudentName: Sarah Martin
+ * @studentID: C00257967
+ * @date 10/10/2023
+ */
 
-*/
 const int TotalThreads = 5;
 /*! displays the first function in the barrier being executed */
 void task(std::shared_ptr<Barrier> barrierObj){

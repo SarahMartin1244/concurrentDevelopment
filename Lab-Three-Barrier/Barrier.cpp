@@ -1,11 +1,16 @@
 #include "Barrier.h"
 #include <iostream>
 
-/*! Student Name: Sarah Martin 
-    Description: This program demonstrates the use of a Barrier using Semaphores
-    Date: 10/10/2023
+/**
+ * @file Barrer.cpp
+ * @brief This program demonstrates the use of a Barrier using Semaphores
+ *
+ * 
+ * @StudentName: Sarah Martin
+ * @studentID: C00257967
+ * @date 10/10/2023
+ */
 
-*/
 
 /*! \class Barrier
     \brief A Barrier Implementation

@@ -1,13 +1,19 @@
-#Sarah Martin C00257967
-#Makefile for mutualEx.cpp and semaphore.cpp 
-
+# Makefile for mutualEx.cpp and semaphore.cpp
+# Author: Sarah Martin (C00257967)
+# License: This project is licensed under the [GNU General Public License, Version 3](https://www.gnu.org/licenses/gpl-3.0).
+# Git URL: https://github.com/SarahMartin1244/concurrentDevelopment/tree/main/labOne
 
 CC=g++
-CFLAGS= -std=c++11 -pthread
+CFLAGS=-std=c++11 -pthread
 
-MUTUAL: mutualEx.cpp
-	g++ -std=c++11 -pthread mutualEx.cpp Semaphore.cpp -o mutual 
+MUTUAL=mutual
+SRCS=MutualEx.cpp Semaphore.cpp
 
+all: $(MUTUAL)
 
-CLEAN:
-	rm *.o
+$(MUTUAL): $(SRCS)
+	$(CC) $(CFLAGS) $^ -o $@
+
+clean:
+	rm -f *.o $(MUTUAL)
+

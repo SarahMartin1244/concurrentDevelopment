@@ -1,0 +1,32 @@
+# Project Lab 5: Philosophers
+
+## Student Information
+- **Student Name:** Sarah Martin
+- **Student ID:** C00257967
+- **Date:** 5/11/2023
+
+## Project Overview
+This program demonstrates the dining philosophers problem using semaphores. It simulates multiple philosophers thinking, accessing forks, eating, and releasing forks concurrently.
+
+
+## License
+This project is licensed under the [GNU General Public License, Version 3](https://www.gnu.org/licenses/gpl-3.0).
+
+## GIT URL
+
+
+### Project Details
+#### `Philosophers.cpp`
+The `Philosophers.cpp` program implements the dining philosophers problem 
+
+#### `Semaphore.cpp`
+ The `Semaphore` class is used in the `Philosophers.cpp` program for synchronization.
+
+
+
+
+
+
+
+
+

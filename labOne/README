@@ -1,13 +1,27 @@
-## student Name: Sarah Martin
-## student ID: C00257967
-## 1/10/2023
-This project is licensed under the [GNU General Public License, Version 3](https://www.gnu.org/licenses/gpl-3.0)
+# Project Lab One 
 
-# Lab One 
+## Student Information
+- **Student Name:** Sarah Martin
+- **Student ID:** C00257967
+- **Date:** 1/10/2023
 
+## Project Overview
+This project demonstrates and utilise's semaphores and mutex locks in a multi-threaded environment to achieve mutual exclusion. The example is implemented in C++11 and showcases the use of features such as mutex and condition variables.
 
-## Project Description 
-Demonstrates the use of semaphores and mutex locks for multi-threads and mutual exlusion. 
+## License
+This project is licensed under the [GNU General Public License, Version 3](https://www.gnu.org/licenses/gpl-3.0).
+
+## GIT URL
+https://github.com/SarahMartin1244/concurrentDevelopment/tree/main/labOne
+
+### Project Details
+
+#### `Semaphore.h`
+The `Semaphore` class provides an implementation of a semaphore. It includes methods for waiting and signaling, ensuring synchronized access to shared resources.
+
+#### `mutualEx.cpp`
+launches multiple threads, each executing the `updateTask` function, which increments a shared variable while ensuring mutual exclusion using a mutex lock and semaphores.
+
 
 
 

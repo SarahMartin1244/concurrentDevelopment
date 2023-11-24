@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['task_7',['task',['../rendezvous_8cpp.html#ac34cf77cc8e1638b44167f3bdda3ac64',1,'rendezvous.cpp']]]
+  ['semaphore_13',['Semaphore',['../class_semaphore.html#a0d9290d316636875ca85d1d78950a817',1,'Semaphore']]],
+  ['signal_14',['Signal',['../class_semaphore.html#a86f92f738b4486439b296d8e235895f2',1,'Semaphore']]]
 ];
