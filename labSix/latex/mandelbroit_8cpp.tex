@@ -1,0 +1,89 @@
+\hypertarget{mandelbroit_8cpp}{}\doxysection{map/mandelbroit.cpp File Reference}
+\label{mandelbroit_8cpp}\index{map/mandelbroit.cpp@{map/mandelbroit.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$complex$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$limits$>$}\newline
+Include dependency graph for mandelbroit.\+cpp\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{mandelbroit_8cpp_a90efdf8cc6afbd58cf8c363528e55155}{calc}} (complex$<$ int $>$ c, int depth)
+\begin{DoxyCompactList}\small\item\em Calculate the Mandelbrot value for a given complex number. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{mandelbroit_8cpp_a714bf111c48a34bc7463c91153b491a1}{mandel}} (int p\mbox{[}\mbox{\hyperlink{mandelbroit_8cpp_a442a526f05e8429d610b777bb0a4446b}{ROW}}\mbox{]}\mbox{[}\mbox{\hyperlink{mandelbroit_8cpp_ade5776b4151c77e0c375d1091dae8978}{COL}}\mbox{]}, int depth)
+\begin{DoxyCompactList}\small\item\em Generate the Mandelbrot set. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{mandelbroit_8cpp_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{mandelbroit_8cpp_a442a526f05e8429d610b777bb0a4446b}{ROW}} =1000
+\item 
+const int \mbox{\hyperlink{mandelbroit_8cpp_ade5776b4151c77e0c375d1091dae8978}{COL}} =1000
+\item 
+const int \mbox{\hyperlink{mandelbroit_8cpp_a58b87c2251946d94f6a6dc43572db440}{DEPTH}} =10
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{mandelbroit_8cpp_a90efdf8cc6afbd58cf8c363528e55155}\label{mandelbroit_8cpp_a90efdf8cc6afbd58cf8c363528e55155}} 
+\index{mandelbroit.cpp@{mandelbroit.cpp}!calc@{calc}}
+\index{calc@{calc}!mandelbroit.cpp@{mandelbroit.cpp}}
+\doxysubsubsection{\texorpdfstring{calc()}{calc()}}
+{\footnotesize\ttfamily int calc (\begin{DoxyParamCaption}\item[{complex$<$ int $>$}]{c,  }\item[{int}]{depth }\end{DoxyParamCaption})}
+
+
+
+Calculate the Mandelbrot value for a given complex number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & The complex number to calculate the Mandelbrot value for. \\
+\hline
+{\em depth} & The maximum number of iterations. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{mandelbroit_8cpp_a840291bc02cba5474a4cb46a9b9566fe}\label{mandelbroit_8cpp_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{mandelbroit.cpp@{mandelbroit.cpp}!main@{main}}
+\index{main@{main}!mandelbroit.cpp@{mandelbroit.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{mandelbroit_8cpp_a714bf111c48a34bc7463c91153b491a1}\label{mandelbroit_8cpp_a714bf111c48a34bc7463c91153b491a1}} 
+\index{mandelbroit.cpp@{mandelbroit.cpp}!mandel@{mandel}}
+\index{mandel@{mandel}!mandelbroit.cpp@{mandelbroit.cpp}}
+\doxysubsubsection{\texorpdfstring{mandel()}{mandel()}}
+{\footnotesize\ttfamily void mandel (\begin{DoxyParamCaption}\item[{int}]{p\mbox{[}\+ROW\mbox{]}\mbox{[}\+COL\mbox{]},  }\item[{int}]{depth }\end{DoxyParamCaption})}
+
+
+
+Generate the Mandelbrot set. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & The array to store the Mandelbrot values. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{mandelbroit_8cpp_ade5776b4151c77e0c375d1091dae8978}\label{mandelbroit_8cpp_ade5776b4151c77e0c375d1091dae8978}} 
+\index{mandelbroit.cpp@{mandelbroit.cpp}!COL@{COL}}
+\index{COL@{COL}!mandelbroit.cpp@{mandelbroit.cpp}}
+\doxysubsubsection{\texorpdfstring{COL}{COL}}
+{\footnotesize\ttfamily const int COL =1000}
+
+\mbox{\Hypertarget{mandelbroit_8cpp_a58b87c2251946d94f6a6dc43572db440}\label{mandelbroit_8cpp_a58b87c2251946d94f6a6dc43572db440}} 
+\index{mandelbroit.cpp@{mandelbroit.cpp}!DEPTH@{DEPTH}}
+\index{DEPTH@{DEPTH}!mandelbroit.cpp@{mandelbroit.cpp}}
+\doxysubsubsection{\texorpdfstring{DEPTH}{DEPTH}}
+{\footnotesize\ttfamily const int DEPTH =10}
+
+\mbox{\Hypertarget{mandelbroit_8cpp_a442a526f05e8429d610b777bb0a4446b}\label{mandelbroit_8cpp_a442a526f05e8429d610b777bb0a4446b}} 
+\index{mandelbroit.cpp@{mandelbroit.cpp}!ROW@{ROW}}
+\index{ROW@{ROW}!mandelbroit.cpp@{mandelbroit.cpp}}
+\doxysubsubsection{\texorpdfstring{ROW}{ROW}}
+{\footnotesize\ttfamily const int ROW =1000}
+

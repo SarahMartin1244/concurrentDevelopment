@@ -1,0 +1,21 @@
+\hypertarget{hello_8c}{}\doxysection{hello.\+c File Reference}
+\label{hello_8c}\index{hello.c@{hello.c}}
+{\ttfamily \#include $<$omp.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+Include dependency graph for hello.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{hello_8c_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{hello_8c_a0ddf1224851353fc92bfbff6f499fa97}\label{hello_8c_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{hello.c@{hello.c}!main@{main}}
+\index{main@{main}!hello.c@{hello.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+

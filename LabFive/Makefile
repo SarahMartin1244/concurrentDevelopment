@@ -1,7 +1,7 @@
 # Makefile for dining_philosophers program
 # Author: Sarah Martin (C00257967)
 # License: This project is licensed under the [GNU General Public License, Version 3](https://www.gnu.org/licenses/gpl-3.0).
-# Git URL: 
+# Git URL: https://github.com/SarahMartin1244/concurrentDevelopment/tree/main/LabFive
 
 CC = g++
 # Compiler flags
