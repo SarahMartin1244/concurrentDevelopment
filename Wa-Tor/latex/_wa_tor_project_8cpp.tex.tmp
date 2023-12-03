@@ -1,0 +1,413 @@
+\hypertarget{_wa_tor_project_8cpp}{}\doxysection{Wa\+Tor\+Project.\+cpp File Reference}
+\label{_wa_tor_project_8cpp}\index{WaTorProject.cpp@{WaTorProject.cpp}}
+{\ttfamily \#include $<$SFML/\+Graphics.\+hpp$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$ctime$>$}\newline
+{\ttfamily \#include $<$omp.\+h$>$}\newline
+Include dependency graph for Wa\+Tor\+Project.\+cpp\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_wa_tor_project_8cpp_aad209813dc8a729da8da4f348885eb59}{move\+Shark\+With\+Breeding}} (int x, int y, int \&newX, int \&newY, int xdim, int ydim)
+\begin{DoxyCompactList}\small\item\em Move a shark considering breeding and empty spaces. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_wa_tor_project_8cpp_a29fe92de5256c0d69208e4c14d41f5e1}{initialize\+World}} (int xdim, int ydim, int fish\+Percentage)
+\begin{DoxyCompactList}\small\item\em Initialize the world with fish based on a given percentage. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_wa_tor_project_8cpp_a78d9c35c893dc01ce72f58403c52325e}{move\+Fish}} (int x, int y, int \&newX, int \&newY, int xdim, int ydim)
+\begin{DoxyCompactList}\small\item\em Move a fish randomly in an empty direction. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_wa_tor_project_8cpp_a468b1908268e03eac8dbc607ae6ab809}{move\+Fish\+With\+Breeding}} (int x, int y, int \&newX, int \&newY, int xdim, int ydim)
+\begin{DoxyCompactList}\small\item\em Move a fish considering breeding and escaping from sharks. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_wa_tor_project_8cpp_a0b3210596a18e8c0a99322684091e27f}{move\+Shark}} (int x, int y, int \&newX, int \&newY, int \&energy, int xdim, int ydim)
+\begin{DoxyCompactList}\small\item\em Move a shark based on its behavior (hunt fish and breed). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_wa_tor_project_8cpp_a01e9e99c2efd3dcdf75cff8b5e22cdab}{count\+Shark\+Population}} ()
+\begin{DoxyCompactList}\small\item\em Count the current shark population in the world. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_wa_tor_project_8cpp_afbbe17ff79844eaaf57d2137f2c5faa8}{update\+World}} (int xdim, int ydim)
+\begin{DoxyCompactList}\small\item\em Update the world for one iteration of the simulation. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_wa_tor_project_8cpp_a922adc69f3aaa0ce43f5056a127b2c97}{count\+Fish\+Population}} ()
+\begin{DoxyCompactList}\small\item\em Count the current fish population in the world. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_wa_tor_project_8cpp_a7f9a0bee593d0401dd59a29b02fadabb}{print\+Breeding\+Times}} ()
+\begin{DoxyCompactList}\small\item\em Print the breeding times of fish for debugging info. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{_wa_tor_project_8cpp_a9f6911db97b29dba8d8b7456613a20d2}{measure\+Execution\+Time}} (int xdim, int ydim, int num\+Threads)
+\begin{DoxyCompactList}\small\item\em Measure the execution time of the simulation with different thread counts. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_wa_tor_project_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\begin{DoxyCompactList}\small\item\em Main function of the Wa-\/\+Tor simulation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{_wa_tor_project_8cpp_af0380e8edbdaff655a37ac1dcd0e3c38}{EMPTY}} = 0
+\begin{DoxyCompactList}\small\item\em Value representing an empty cell. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{_wa_tor_project_8cpp_ad0db3ff560bf286d7c459f0dbf682462}{Num\+Fish}} = 2
+\begin{DoxyCompactList}\small\item\em Initial fish population. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{_wa_tor_project_8cpp_a0f82d670575f4795252e933d1c629a8e}{Num\+Shark}} = 10
+\begin{DoxyCompactList}\small\item\em Initial shark population. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{_wa_tor_project_8cpp_aa2f7182eb04f4c6572ed1f0e9078f57e}{Fish\+Breed}} = 20
+\begin{DoxyCompactList}\small\item\em Time for a fish to breed. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{_wa_tor_project_8cpp_a6f9cfdba53a7d3658d066949098416d1}{Shark\+Breed}} = 2
+\begin{DoxyCompactList}\small\item\em Time for a shark to breed. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{_wa_tor_project_8cpp_a21663176cef103def7e3512731d4f1a9}{shark\+Starve\+Time}} = 10
+\begin{DoxyCompactList}\small\item\em Time for a shark to starve. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_wa_tor_project_8cpp_a2c826f9804d6a5358670bd5652f084ad}{world}} \mbox{[}100\mbox{]}\mbox{[}100\mbox{]}
+\item 
+int \mbox{\hyperlink{_wa_tor_project_8cpp_a9ac501b906cf6bab68de5ca323ce34e2}{fish\+Breeding\+Time}} \mbox{[}100\mbox{]}\mbox{[}100\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_wa_tor_project_8cpp_a922adc69f3aaa0ce43f5056a127b2c97}\label{_wa_tor_project_8cpp_a922adc69f3aaa0ce43f5056a127b2c97}} 
+\index{WaTorProject.cpp@{WaTorProject.cpp}!countFishPopulation@{countFishPopulation}}
+\index{countFishPopulation@{countFishPopulation}!WaTorProject.cpp@{WaTorProject.cpp}}
+\doxysubsubsection{\texorpdfstring{countFishPopulation()}{countFishPopulation()}}
+{\footnotesize\ttfamily int count\+Fish\+Population (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Count the current fish population in the world. 
+
+\begin{DoxyReturn}{Returns}
+Current fish population. 
+\end{DoxyReturn}
+
+
+Definition at line 310 of file Wa\+Tor\+Project.\+cpp.
+
+\mbox{\Hypertarget{_wa_tor_project_8cpp_a01e9e99c2efd3dcdf75cff8b5e22cdab}\label{_wa_tor_project_8cpp_a01e9e99c2efd3dcdf75cff8b5e22cdab}} 
+\index{WaTorProject.cpp@{WaTorProject.cpp}!countSharkPopulation@{countSharkPopulation}}
+\index{countSharkPopulation@{countSharkPopulation}!WaTorProject.cpp@{WaTorProject.cpp}}
+\doxysubsubsection{\texorpdfstring{countSharkPopulation()}{countSharkPopulation()}}
+{\footnotesize\ttfamily int count\+Shark\+Population (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Count the current shark population in the world. 
+
+\begin{DoxyReturn}{Returns}
+Current shark population. 
+\end{DoxyReturn}
+
+
+Definition at line 246 of file Wa\+Tor\+Project.\+cpp.
+
+\mbox{\Hypertarget{_wa_tor_project_8cpp_a29fe92de5256c0d69208e4c14d41f5e1}\label{_wa_tor_project_8cpp_a29fe92de5256c0d69208e4c14d41f5e1}} 
+\index{WaTorProject.cpp@{WaTorProject.cpp}!initializeWorld@{initializeWorld}}
+\index{initializeWorld@{initializeWorld}!WaTorProject.cpp@{WaTorProject.cpp}}
+\doxysubsubsection{\texorpdfstring{initializeWorld()}{initializeWorld()}}
+{\footnotesize\ttfamily void initialize\+World (\begin{DoxyParamCaption}\item[{int}]{xdim,  }\item[{int}]{ydim,  }\item[{int}]{fish\+Percentage }\end{DoxyParamCaption})}
+
+
+
+Initialize the world with fish based on a given percentage. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xdim} & X-\/dimension of the world grid. \\
+\hline
+{\em ydim} & Y-\/dimension of the world grid. \\
+\hline
+{\em fish\+Percentage} & Percentage of cells to be initialized with fish. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 57 of file Wa\+Tor\+Project.\+cpp.
+
+\mbox{\Hypertarget{_wa_tor_project_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{_wa_tor_project_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{WaTorProject.cpp@{WaTorProject.cpp}!main@{main}}
+\index{main@{main}!WaTorProject.cpp@{WaTorProject.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Main function of the Wa-\/\+Tor simulation. 
+
+
+
+Definition at line 360 of file Wa\+Tor\+Project.\+cpp.
+
+\mbox{\Hypertarget{_wa_tor_project_8cpp_a9f6911db97b29dba8d8b7456613a20d2}\label{_wa_tor_project_8cpp_a9f6911db97b29dba8d8b7456613a20d2}} 
+\index{WaTorProject.cpp@{WaTorProject.cpp}!measureExecutionTime@{measureExecutionTime}}
+\index{measureExecutionTime@{measureExecutionTime}!WaTorProject.cpp@{WaTorProject.cpp}}
+\doxysubsubsection{\texorpdfstring{measureExecutionTime()}{measureExecutionTime()}}
+{\footnotesize\ttfamily double measure\+Execution\+Time (\begin{DoxyParamCaption}\item[{int}]{xdim,  }\item[{int}]{ydim,  }\item[{int}]{num\+Threads }\end{DoxyParamCaption})}
+
+
+
+Measure the execution time of the simulation with different thread counts. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xdim} & X-\/dimension of the world grid. \\
+\hline
+{\em ydim} & Y-\/dimension of the world grid. \\
+\hline
+{\em num\+Threads} & Number of threads to use for parallel execution. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Execution time of the simulation. 
+\end{DoxyReturn}
+
+
+Definition at line 338 of file Wa\+Tor\+Project.\+cpp.
+
+\mbox{\Hypertarget{_wa_tor_project_8cpp_a78d9c35c893dc01ce72f58403c52325e}\label{_wa_tor_project_8cpp_a78d9c35c893dc01ce72f58403c52325e}} 
+\index{WaTorProject.cpp@{WaTorProject.cpp}!moveFish@{moveFish}}
+\index{moveFish@{moveFish}!WaTorProject.cpp@{WaTorProject.cpp}}
+\doxysubsubsection{\texorpdfstring{moveFish()}{moveFish()}}
+{\footnotesize\ttfamily void move\+Fish (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int \&}]{newX,  }\item[{int \&}]{newY,  }\item[{int}]{xdim,  }\item[{int}]{ydim }\end{DoxyParamCaption})}
+
+
+
+Move a fish randomly in an empty direction. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em x} & Current x-\/coordinate of the fish. \\
+\hline
+ & {\em y} & Current y-\/coordinate of the fish. \\
+\hline
+\mbox{\texttt{ out}}  & {\em newX} & New x-\/coordinate after the move. \\
+\hline
+\mbox{\texttt{ out}}  & {\em newY} & New y-\/coordinate after the move. \\
+\hline
+ & {\em xdim} & X-\/dimension of the world grid. \\
+\hline
+ & {\em ydim} & Y-\/dimension of the world grid. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 81 of file Wa\+Tor\+Project.\+cpp.
+
+\mbox{\Hypertarget{_wa_tor_project_8cpp_a468b1908268e03eac8dbc607ae6ab809}\label{_wa_tor_project_8cpp_a468b1908268e03eac8dbc607ae6ab809}} 
+\index{WaTorProject.cpp@{WaTorProject.cpp}!moveFishWithBreeding@{moveFishWithBreeding}}
+\index{moveFishWithBreeding@{moveFishWithBreeding}!WaTorProject.cpp@{WaTorProject.cpp}}
+\doxysubsubsection{\texorpdfstring{moveFishWithBreeding()}{moveFishWithBreeding()}}
+{\footnotesize\ttfamily void move\+Fish\+With\+Breeding (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int \&}]{newX,  }\item[{int \&}]{newY,  }\item[{int}]{xdim,  }\item[{int}]{ydim }\end{DoxyParamCaption})}
+
+
+
+Move a fish considering breeding and escaping from sharks. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em x} & Current x-\/coordinate of the fish. \\
+\hline
+ & {\em y} & Current y-\/coordinate of the fish. \\
+\hline
+\mbox{\texttt{ out}}  & {\em newX} & New x-\/coordinate after the move. \\
+\hline
+\mbox{\texttt{ out}}  & {\em newY} & New y-\/coordinate after the move. \\
+\hline
+ & {\em xdim} & X-\/dimension of the world grid. \\
+\hline
+ & {\em ydim} & Y-\/dimension of the world grid. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 113 of file Wa\+Tor\+Project.\+cpp.
+
+\mbox{\Hypertarget{_wa_tor_project_8cpp_a0b3210596a18e8c0a99322684091e27f}\label{_wa_tor_project_8cpp_a0b3210596a18e8c0a99322684091e27f}} 
+\index{WaTorProject.cpp@{WaTorProject.cpp}!moveShark@{moveShark}}
+\index{moveShark@{moveShark}!WaTorProject.cpp@{WaTorProject.cpp}}
+\doxysubsubsection{\texorpdfstring{moveShark()}{moveShark()}}
+{\footnotesize\ttfamily void move\+Shark (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int \&}]{newX,  }\item[{int \&}]{newY,  }\item[{int \&}]{energy,  }\item[{int}]{xdim,  }\item[{int}]{ydim }\end{DoxyParamCaption})}
+
+
+
+Move a shark based on its behavior (hunt fish and breed). 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em x} & Current x-\/coordinate of the shark. \\
+\hline
+ & {\em y} & Current y-\/coordinate of the shark. \\
+\hline
+\mbox{\texttt{ out}}  & {\em newX} & New x-\/coordinate after the move. \\
+\hline
+\mbox{\texttt{ out}}  & {\em newY} & New y-\/coordinate after the move. \\
+\hline
+\mbox{\texttt{ out}}  & {\em Energy} & level of the shark. \\
+\hline
+ & {\em xdim} & X-\/dimension of the world grid. \\
+\hline
+ & {\em ydim} & Y-\/dimension of the world grid. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 169 of file Wa\+Tor\+Project.\+cpp.
+
+\mbox{\Hypertarget{_wa_tor_project_8cpp_aad209813dc8a729da8da4f348885eb59}\label{_wa_tor_project_8cpp_aad209813dc8a729da8da4f348885eb59}} 
+\index{WaTorProject.cpp@{WaTorProject.cpp}!moveSharkWithBreeding@{moveSharkWithBreeding}}
+\index{moveSharkWithBreeding@{moveSharkWithBreeding}!WaTorProject.cpp@{WaTorProject.cpp}}
+\doxysubsubsection{\texorpdfstring{moveSharkWithBreeding()}{moveSharkWithBreeding()}}
+{\footnotesize\ttfamily void move\+Shark\+With\+Breeding (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int \&}]{newX,  }\item[{int \&}]{newY,  }\item[{int}]{xdim,  }\item[{int}]{ydim }\end{DoxyParamCaption})}
+
+
+
+Move a shark considering breeding and empty spaces. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em x} & Current x-\/coordinate of the shark. \\
+\hline
+ & {\em y} & Current y-\/coordinate of the shark. \\
+\hline
+\mbox{\texttt{ out}}  & {\em newX} & New x-\/coordinate after the move. \\
+\hline
+\mbox{\texttt{ out}}  & {\em newY} & New y-\/coordinate after the move. \\
+\hline
+ & {\em xdim} & X-\/dimension of the world grid. \\
+\hline
+ & {\em ydim} & Y-\/dimension of the world grid. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 218 of file Wa\+Tor\+Project.\+cpp.
+
+\mbox{\Hypertarget{_wa_tor_project_8cpp_a7f9a0bee593d0401dd59a29b02fadabb}\label{_wa_tor_project_8cpp_a7f9a0bee593d0401dd59a29b02fadabb}} 
+\index{WaTorProject.cpp@{WaTorProject.cpp}!printBreedingTimes@{printBreedingTimes}}
+\index{printBreedingTimes@{printBreedingTimes}!WaTorProject.cpp@{WaTorProject.cpp}}
+\doxysubsubsection{\texorpdfstring{printBreedingTimes()}{printBreedingTimes()}}
+{\footnotesize\ttfamily void print\+Breeding\+Times (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Print the breeding times of fish for debugging info. 
+
+
+
+Definition at line 323 of file Wa\+Tor\+Project.\+cpp.
+
+\mbox{\Hypertarget{_wa_tor_project_8cpp_afbbe17ff79844eaaf57d2137f2c5faa8}\label{_wa_tor_project_8cpp_afbbe17ff79844eaaf57d2137f2c5faa8}} 
+\index{WaTorProject.cpp@{WaTorProject.cpp}!updateWorld@{updateWorld}}
+\index{updateWorld@{updateWorld}!WaTorProject.cpp@{WaTorProject.cpp}}
+\doxysubsubsection{\texorpdfstring{updateWorld()}{updateWorld()}}
+{\footnotesize\ttfamily void update\+World (\begin{DoxyParamCaption}\item[{int}]{xdim,  }\item[{int}]{ydim }\end{DoxyParamCaption})}
+
+
+
+Update the world for one iteration of the simulation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xdim} & X-\/dimension of the world grid. \\
+\hline
+{\em ydim} & Y-\/dimension of the world grid. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 263 of file Wa\+Tor\+Project.\+cpp.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{_wa_tor_project_8cpp_af0380e8edbdaff655a37ac1dcd0e3c38}\label{_wa_tor_project_8cpp_af0380e8edbdaff655a37ac1dcd0e3c38}} 
+\index{WaTorProject.cpp@{WaTorProject.cpp}!EMPTY@{EMPTY}}
+\index{EMPTY@{EMPTY}!WaTorProject.cpp@{WaTorProject.cpp}}
+\doxysubsubsection{\texorpdfstring{EMPTY}{EMPTY}}
+{\footnotesize\ttfamily const int EMPTY = 0}
+
+
+
+Value representing an empty cell. 
+
+
+
+Definition at line 23 of file Wa\+Tor\+Project.\+cpp.
+
+\mbox{\Hypertarget{_wa_tor_project_8cpp_aa2f7182eb04f4c6572ed1f0e9078f57e}\label{_wa_tor_project_8cpp_aa2f7182eb04f4c6572ed1f0e9078f57e}} 
+\index{WaTorProject.cpp@{WaTorProject.cpp}!FishBreed@{FishBreed}}
+\index{FishBreed@{FishBreed}!WaTorProject.cpp@{WaTorProject.cpp}}
+\doxysubsubsection{\texorpdfstring{FishBreed}{FishBreed}}
+{\footnotesize\ttfamily const int Fish\+Breed = 20}
+
+
+
+Time for a fish to breed. 
+
+
+
+Definition at line 32 of file Wa\+Tor\+Project.\+cpp.
+
+\mbox{\Hypertarget{_wa_tor_project_8cpp_a9ac501b906cf6bab68de5ca323ce34e2}\label{_wa_tor_project_8cpp_a9ac501b906cf6bab68de5ca323ce34e2}} 
+\index{WaTorProject.cpp@{WaTorProject.cpp}!fishBreedingTime@{fishBreedingTime}}
+\index{fishBreedingTime@{fishBreedingTime}!WaTorProject.cpp@{WaTorProject.cpp}}
+\doxysubsubsection{\texorpdfstring{fishBreedingTime}{fishBreedingTime}}
+{\footnotesize\ttfamily int fish\+Breeding\+Time\mbox{[}100\mbox{]}\mbox{[}100\mbox{]}}
+
+
+
+Definition at line 43 of file Wa\+Tor\+Project.\+cpp.
+
+\mbox{\Hypertarget{_wa_tor_project_8cpp_ad0db3ff560bf286d7c459f0dbf682462}\label{_wa_tor_project_8cpp_ad0db3ff560bf286d7c459f0dbf682462}} 
+\index{WaTorProject.cpp@{WaTorProject.cpp}!NumFish@{NumFish}}
+\index{NumFish@{NumFish}!WaTorProject.cpp@{WaTorProject.cpp}}
+\doxysubsubsection{\texorpdfstring{NumFish}{NumFish}}
+{\footnotesize\ttfamily const int Num\+Fish = 2}
+
+
+
+Initial fish population. 
+
+
+
+Definition at line 26 of file Wa\+Tor\+Project.\+cpp.
+
+\mbox{\Hypertarget{_wa_tor_project_8cpp_a0f82d670575f4795252e933d1c629a8e}\label{_wa_tor_project_8cpp_a0f82d670575f4795252e933d1c629a8e}} 
+\index{WaTorProject.cpp@{WaTorProject.cpp}!NumShark@{NumShark}}
+\index{NumShark@{NumShark}!WaTorProject.cpp@{WaTorProject.cpp}}
+\doxysubsubsection{\texorpdfstring{NumShark}{NumShark}}
+{\footnotesize\ttfamily const int Num\+Shark = 10}
+
+
+
+Initial shark population. 
+
+
+
+Definition at line 29 of file Wa\+Tor\+Project.\+cpp.
+
+\mbox{\Hypertarget{_wa_tor_project_8cpp_a6f9cfdba53a7d3658d066949098416d1}\label{_wa_tor_project_8cpp_a6f9cfdba53a7d3658d066949098416d1}} 
+\index{WaTorProject.cpp@{WaTorProject.cpp}!SharkBreed@{SharkBreed}}
+\index{SharkBreed@{SharkBreed}!WaTorProject.cpp@{WaTorProject.cpp}}
+\doxysubsubsection{\texorpdfstring{SharkBreed}{SharkBreed}}
+{\footnotesize\ttfamily const int Shark\+Breed = 2}
+
+
+
+Time for a shark to breed. 
+
+
+
+Definition at line 35 of file Wa\+Tor\+Project.\+cpp.
+
+\mbox{\Hypertarget{_wa_tor_project_8cpp_a21663176cef103def7e3512731d4f1a9}\label{_wa_tor_project_8cpp_a21663176cef103def7e3512731d4f1a9}} 
+\index{WaTorProject.cpp@{WaTorProject.cpp}!sharkStarveTime@{sharkStarveTime}}
+\index{sharkStarveTime@{sharkStarveTime}!WaTorProject.cpp@{WaTorProject.cpp}}
+\doxysubsubsection{\texorpdfstring{sharkStarveTime}{sharkStarveTime}}
+{\footnotesize\ttfamily const int shark\+Starve\+Time = 10}
+
+
+
+Time for a shark to starve. 
+
+
+
+Definition at line 38 of file Wa\+Tor\+Project.\+cpp.
+
+\mbox{\Hypertarget{_wa_tor_project_8cpp_a2c826f9804d6a5358670bd5652f084ad}\label{_wa_tor_project_8cpp_a2c826f9804d6a5358670bd5652f084ad}} 
+\index{WaTorProject.cpp@{WaTorProject.cpp}!world@{world}}
+\index{world@{world}!WaTorProject.cpp@{WaTorProject.cpp}}
+\doxysubsubsection{\texorpdfstring{world}{world}}
+{\footnotesize\ttfamily int world\mbox{[}100\mbox{]}\mbox{[}100\mbox{]}}
+
+
+
+Definition at line 42 of file Wa\+Tor\+Project.\+cpp.
+

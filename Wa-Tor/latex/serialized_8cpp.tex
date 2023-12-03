@@ -1,0 +1,243 @@
+\hypertarget{serialized_8cpp}{}\doxysection{serialized.\+cpp File Reference}
+\label{serialized_8cpp}\index{serialized.cpp@{serialized.cpp}}
+{\ttfamily \#include $<$SFML/\+Graphics.\+hpp$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$ctime$>$}\newline
+Include dependency graph for serialized.\+cpp\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{serialized_8cpp_aad209813dc8a729da8da4f348885eb59}{move\+Shark\+With\+Breeding}} (int x, int y, int \&newX, int \&newY, int xdim, int ydim)
+\begin{DoxyCompactList}\small\item\em Move a shark considering breeding and empty spaces. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{serialized_8cpp_a6b4a0c9f07bc1182ce741e5f2ce99008}{initialize\+World}} (int xdim, int ydim)
+\item 
+void \mbox{\hyperlink{serialized_8cpp_a78d9c35c893dc01ce72f58403c52325e}{move\+Fish}} (int x, int y, int \&newX, int \&newY, int xdim, int ydim)
+\item 
+void \mbox{\hyperlink{serialized_8cpp_a468b1908268e03eac8dbc607ae6ab809}{move\+Fish\+With\+Breeding}} (int x, int y, int \&newX, int \&newY, int xdim, int ydim)
+\item 
+void \mbox{\hyperlink{serialized_8cpp_a0b3210596a18e8c0a99322684091e27f}{move\+Shark}} (int x, int y, int \&newX, int \&newY, int \&energy, int xdim, int ydim)
+\item 
+void \mbox{\hyperlink{serialized_8cpp_afbbe17ff79844eaaf57d2137f2c5faa8}{update\+World}} (int xdim, int ydim)
+\item 
+int \mbox{\hyperlink{serialized_8cpp_a922adc69f3aaa0ce43f5056a127b2c97}{count\+Fish\+Population}} ()
+\item 
+void \mbox{\hyperlink{serialized_8cpp_a7f9a0bee593d0401dd59a29b02fadabb}{print\+Breeding\+Times}} ()
+\item 
+int \mbox{\hyperlink{serialized_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{serialized_8cpp_af0380e8edbdaff655a37ac1dcd0e3c38}{EMPTY}} = 0
+\item 
+const int \mbox{\hyperlink{serialized_8cpp_ad0db3ff560bf286d7c459f0dbf682462}{Num\+Fish}} = 1
+\item 
+const int \mbox{\hyperlink{serialized_8cpp_a0f82d670575f4795252e933d1c629a8e}{Num\+Shark}} = 2
+\item 
+const int \mbox{\hyperlink{serialized_8cpp_aa2f7182eb04f4c6572ed1f0e9078f57e}{Fish\+Breed}} = 1
+\item 
+const int \mbox{\hyperlink{serialized_8cpp_a6f9cfdba53a7d3658d066949098416d1}{Shark\+Breed}} = 4
+\item 
+const int \mbox{\hyperlink{serialized_8cpp_a21663176cef103def7e3512731d4f1a9}{shark\+Starve\+Time}} = 10
+\item 
+int \mbox{\hyperlink{serialized_8cpp_a2c826f9804d6a5358670bd5652f084ad}{world}} \mbox{[}100\mbox{]}\mbox{[}100\mbox{]}
+\item 
+int \mbox{\hyperlink{serialized_8cpp_a9ac501b906cf6bab68de5ca323ce34e2}{fish\+Breeding\+Time}} \mbox{[}100\mbox{]}\mbox{[}100\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{serialized_8cpp_a922adc69f3aaa0ce43f5056a127b2c97}\label{serialized_8cpp_a922adc69f3aaa0ce43f5056a127b2c97}} 
+\index{serialized.cpp@{serialized.cpp}!countFishPopulation@{countFishPopulation}}
+\index{countFishPopulation@{countFishPopulation}!serialized.cpp@{serialized.cpp}}
+\doxysubsubsection{\texorpdfstring{countFishPopulation()}{countFishPopulation()}}
+{\footnotesize\ttfamily int count\+Fish\+Population (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 210 of file serialized.\+cpp.
+
+\mbox{\Hypertarget{serialized_8cpp_a6b4a0c9f07bc1182ce741e5f2ce99008}\label{serialized_8cpp_a6b4a0c9f07bc1182ce741e5f2ce99008}} 
+\index{serialized.cpp@{serialized.cpp}!initializeWorld@{initializeWorld}}
+\index{initializeWorld@{initializeWorld}!serialized.cpp@{serialized.cpp}}
+\doxysubsubsection{\texorpdfstring{initializeWorld()}{initializeWorld()}}
+{\footnotesize\ttfamily void initialize\+World (\begin{DoxyParamCaption}\item[{int}]{xdim,  }\item[{int}]{ydim }\end{DoxyParamCaption})}
+
+
+
+Definition at line 20 of file serialized.\+cpp.
+
+\mbox{\Hypertarget{serialized_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{serialized_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{serialized.cpp@{serialized.cpp}!main@{main}}
+\index{main@{main}!serialized.cpp@{serialized.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 232 of file serialized.\+cpp.
+
+\mbox{\Hypertarget{serialized_8cpp_a78d9c35c893dc01ce72f58403c52325e}\label{serialized_8cpp_a78d9c35c893dc01ce72f58403c52325e}} 
+\index{serialized.cpp@{serialized.cpp}!moveFish@{moveFish}}
+\index{moveFish@{moveFish}!serialized.cpp@{serialized.cpp}}
+\doxysubsubsection{\texorpdfstring{moveFish()}{moveFish()}}
+{\footnotesize\ttfamily void move\+Fish (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int \&}]{newX,  }\item[{int \&}]{newY,  }\item[{int}]{xdim,  }\item[{int}]{ydim }\end{DoxyParamCaption})}
+
+
+
+Definition at line 31 of file serialized.\+cpp.
+
+\mbox{\Hypertarget{serialized_8cpp_a468b1908268e03eac8dbc607ae6ab809}\label{serialized_8cpp_a468b1908268e03eac8dbc607ae6ab809}} 
+\index{serialized.cpp@{serialized.cpp}!moveFishWithBreeding@{moveFishWithBreeding}}
+\index{moveFishWithBreeding@{moveFishWithBreeding}!serialized.cpp@{serialized.cpp}}
+\doxysubsubsection{\texorpdfstring{moveFishWithBreeding()}{moveFishWithBreeding()}}
+{\footnotesize\ttfamily void move\+Fish\+With\+Breeding (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int \&}]{newX,  }\item[{int \&}]{newY,  }\item[{int}]{xdim,  }\item[{int}]{ydim }\end{DoxyParamCaption})}
+
+
+
+Definition at line 56 of file serialized.\+cpp.
+
+\mbox{\Hypertarget{serialized_8cpp_a0b3210596a18e8c0a99322684091e27f}\label{serialized_8cpp_a0b3210596a18e8c0a99322684091e27f}} 
+\index{serialized.cpp@{serialized.cpp}!moveShark@{moveShark}}
+\index{moveShark@{moveShark}!serialized.cpp@{serialized.cpp}}
+\doxysubsubsection{\texorpdfstring{moveShark()}{moveShark()}}
+{\footnotesize\ttfamily void move\+Shark (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int \&}]{newX,  }\item[{int \&}]{newY,  }\item[{int \&}]{energy,  }\item[{int}]{xdim,  }\item[{int}]{ydim }\end{DoxyParamCaption})}
+
+
+
+Definition at line 94 of file serialized.\+cpp.
+
+\mbox{\Hypertarget{serialized_8cpp_aad209813dc8a729da8da4f348885eb59}\label{serialized_8cpp_aad209813dc8a729da8da4f348885eb59}} 
+\index{serialized.cpp@{serialized.cpp}!moveSharkWithBreeding@{moveSharkWithBreeding}}
+\index{moveSharkWithBreeding@{moveSharkWithBreeding}!serialized.cpp@{serialized.cpp}}
+\doxysubsubsection{\texorpdfstring{moveSharkWithBreeding()}{moveSharkWithBreeding()}}
+{\footnotesize\ttfamily void move\+Shark\+With\+Breeding (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int \&}]{newX,  }\item[{int \&}]{newY,  }\item[{int}]{xdim,  }\item[{int}]{ydim }\end{DoxyParamCaption})}
+
+
+
+Move a shark considering breeding and empty spaces. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em x} & Current x-\/coordinate of the shark. \\
+\hline
+ & {\em y} & Current y-\/coordinate of the shark. \\
+\hline
+\mbox{\texttt{ out}}  & {\em newX} & New x-\/coordinate after the move. \\
+\hline
+\mbox{\texttt{ out}}  & {\em newY} & New y-\/coordinate after the move. \\
+\hline
+ & {\em xdim} & X-\/dimension of the world grid. \\
+\hline
+ & {\em ydim} & Y-\/dimension of the world grid. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 138 of file serialized.\+cpp.
+
+\mbox{\Hypertarget{serialized_8cpp_a7f9a0bee593d0401dd59a29b02fadabb}\label{serialized_8cpp_a7f9a0bee593d0401dd59a29b02fadabb}} 
+\index{serialized.cpp@{serialized.cpp}!printBreedingTimes@{printBreedingTimes}}
+\index{printBreedingTimes@{printBreedingTimes}!serialized.cpp@{serialized.cpp}}
+\doxysubsubsection{\texorpdfstring{printBreedingTimes()}{printBreedingTimes()}}
+{\footnotesize\ttfamily void print\+Breeding\+Times (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 223 of file serialized.\+cpp.
+
+\mbox{\Hypertarget{serialized_8cpp_afbbe17ff79844eaaf57d2137f2c5faa8}\label{serialized_8cpp_afbbe17ff79844eaaf57d2137f2c5faa8}} 
+\index{serialized.cpp@{serialized.cpp}!updateWorld@{updateWorld}}
+\index{updateWorld@{updateWorld}!serialized.cpp@{serialized.cpp}}
+\doxysubsubsection{\texorpdfstring{updateWorld()}{updateWorld()}}
+{\footnotesize\ttfamily void update\+World (\begin{DoxyParamCaption}\item[{int}]{xdim,  }\item[{int}]{ydim }\end{DoxyParamCaption})}
+
+
+
+Definition at line 163 of file serialized.\+cpp.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{serialized_8cpp_af0380e8edbdaff655a37ac1dcd0e3c38}\label{serialized_8cpp_af0380e8edbdaff655a37ac1dcd0e3c38}} 
+\index{serialized.cpp@{serialized.cpp}!EMPTY@{EMPTY}}
+\index{EMPTY@{EMPTY}!serialized.cpp@{serialized.cpp}}
+\doxysubsubsection{\texorpdfstring{EMPTY}{EMPTY}}
+{\footnotesize\ttfamily const int EMPTY = 0}
+
+
+
+Definition at line 6 of file serialized.\+cpp.
+
+\mbox{\Hypertarget{serialized_8cpp_aa2f7182eb04f4c6572ed1f0e9078f57e}\label{serialized_8cpp_aa2f7182eb04f4c6572ed1f0e9078f57e}} 
+\index{serialized.cpp@{serialized.cpp}!FishBreed@{FishBreed}}
+\index{FishBreed@{FishBreed}!serialized.cpp@{serialized.cpp}}
+\doxysubsubsection{\texorpdfstring{FishBreed}{FishBreed}}
+{\footnotesize\ttfamily const int Fish\+Breed = 1}
+
+
+
+Definition at line 10 of file serialized.\+cpp.
+
+\mbox{\Hypertarget{serialized_8cpp_a9ac501b906cf6bab68de5ca323ce34e2}\label{serialized_8cpp_a9ac501b906cf6bab68de5ca323ce34e2}} 
+\index{serialized.cpp@{serialized.cpp}!fishBreedingTime@{fishBreedingTime}}
+\index{fishBreedingTime@{fishBreedingTime}!serialized.cpp@{serialized.cpp}}
+\doxysubsubsection{\texorpdfstring{fishBreedingTime}{fishBreedingTime}}
+{\footnotesize\ttfamily int fish\+Breeding\+Time\mbox{[}100\mbox{]}\mbox{[}100\mbox{]}}
+
+
+
+Definition at line 15 of file serialized.\+cpp.
+
+\mbox{\Hypertarget{serialized_8cpp_ad0db3ff560bf286d7c459f0dbf682462}\label{serialized_8cpp_ad0db3ff560bf286d7c459f0dbf682462}} 
+\index{serialized.cpp@{serialized.cpp}!NumFish@{NumFish}}
+\index{NumFish@{NumFish}!serialized.cpp@{serialized.cpp}}
+\doxysubsubsection{\texorpdfstring{NumFish}{NumFish}}
+{\footnotesize\ttfamily const int Num\+Fish = 1}
+
+
+
+Definition at line 7 of file serialized.\+cpp.
+
+\mbox{\Hypertarget{serialized_8cpp_a0f82d670575f4795252e933d1c629a8e}\label{serialized_8cpp_a0f82d670575f4795252e933d1c629a8e}} 
+\index{serialized.cpp@{serialized.cpp}!NumShark@{NumShark}}
+\index{NumShark@{NumShark}!serialized.cpp@{serialized.cpp}}
+\doxysubsubsection{\texorpdfstring{NumShark}{NumShark}}
+{\footnotesize\ttfamily const int Num\+Shark = 2}
+
+
+
+Definition at line 8 of file serialized.\+cpp.
+
+\mbox{\Hypertarget{serialized_8cpp_a6f9cfdba53a7d3658d066949098416d1}\label{serialized_8cpp_a6f9cfdba53a7d3658d066949098416d1}} 
+\index{serialized.cpp@{serialized.cpp}!SharkBreed@{SharkBreed}}
+\index{SharkBreed@{SharkBreed}!serialized.cpp@{serialized.cpp}}
+\doxysubsubsection{\texorpdfstring{SharkBreed}{SharkBreed}}
+{\footnotesize\ttfamily const int Shark\+Breed = 4}
+
+
+
+Definition at line 11 of file serialized.\+cpp.
+
+\mbox{\Hypertarget{serialized_8cpp_a21663176cef103def7e3512731d4f1a9}\label{serialized_8cpp_a21663176cef103def7e3512731d4f1a9}} 
+\index{serialized.cpp@{serialized.cpp}!sharkStarveTime@{sharkStarveTime}}
+\index{sharkStarveTime@{sharkStarveTime}!serialized.cpp@{serialized.cpp}}
+\doxysubsubsection{\texorpdfstring{sharkStarveTime}{sharkStarveTime}}
+{\footnotesize\ttfamily const int shark\+Starve\+Time = 10}
+
+
+
+Definition at line 12 of file serialized.\+cpp.
+
+\mbox{\Hypertarget{serialized_8cpp_a2c826f9804d6a5358670bd5652f084ad}\label{serialized_8cpp_a2c826f9804d6a5358670bd5652f084ad}} 
+\index{serialized.cpp@{serialized.cpp}!world@{world}}
+\index{world@{world}!serialized.cpp@{serialized.cpp}}
+\doxysubsubsection{\texorpdfstring{world}{world}}
+{\footnotesize\ttfamily int world\mbox{[}100\mbox{]}\mbox{[}100\mbox{]}}
+
+
+
+Definition at line 14 of file serialized.\+cpp.
+
